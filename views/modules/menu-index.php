@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	$sec = new Seguridad();
  ?>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -28,13 +28,15 @@
       </ul>
       <ul class="navbar-nav ml-auto">
       	<?php
-				if($_SESSION["isLogged"]){
+				if(isset($_SESSION["isLogged"])){
+					if($_SESSION["isLogged"]){
 		  ?>
         <li id="pgIni" class="nav-item">
           <a class="nav-link" href="./?p=<?php echo $sec->encript("logout"); ?>">Cerrar Sesion</a>
         </li>
         <?php
         	}
+				}
         ?>
       </ul>
     </div>

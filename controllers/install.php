@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  //session_start();
   class installC extends Seguridad{
     private $conection;
 
@@ -16,7 +16,7 @@
         $_SESSION['userName']=$_POST['userName'];
         $_SESSION['pwd']=$pass;
         $_SESSION['responseModel']="";
-		
+
 		$inserts = array("INSERT INTO tipousuario (nombre) VALUES ('admin')",
 		  "INSERT INTO tipousuario (nombre) VALUES ('user')");
         $dropTables=array(
@@ -181,7 +181,7 @@
         echo '<script type="text/javascript">disableTabById("server");activeTabById("enterprise");setTtle("Instalador - Empresa");</script>';
       }
     }
-    
+
     public function addAdmin(){
 		if(isset($_POST["addAdmin"])){
 			// edited at 12/abr./2021 17:26
@@ -205,7 +205,7 @@
 				$resAd = $installer->createAdmin($dataAdmin);
 				$_SESSION["responseModel"] .= $resAd;
 				$_SESSION["responseModel"] .= $installer->createFile();
-				
+
 				echo $_SESSION["responseModel"];
 				echo '<script type="text/javascript">disableTabById("server");disableTabById("enterprise");disableTabById("location");disableTabById("fPagos");disableTabById("cargos");disableTabById("admin");activeTabById("finish");setTtle("Instalador - Finalizar");</script>';
 			}
@@ -248,7 +248,7 @@
         echo '<script type="text/javascript">disableTabById("server");disableTabById("enterprise");disableTabById("location");activeTabById("fPagos");setTtle("Instalador - Formas de Pago");</script>';
       }
     }
-    
+
     public function addPayments(){
     	if(isset($_POST["addPayments"])){
     		$data = $_POST['payments'];
@@ -257,12 +257,12 @@
     			$res = $con->addPayment($value,'formapago');
     			$_SESSION['responseModel'].=$res;
     		}
-    		
+
     		echo $_SESSION['responseModel'];
         	echo '<script type="text/javascript">disableTabById("server");disableTabById("enterprise");disableTabById("location");disableTabById("fPagos");activeTabById("cargos");setTtle("Instalador - Cargos");</script>';
     	}
     }
-    
+
     public function addCargos(){
 		if(isset($_POST["addCargos"])){
 			$data=$_POST["cargos"];
@@ -271,11 +271,11 @@
 				$res = $installer->addCargo($value,"cargo");
 				$_SESSION["responseModel"].=$res;
 			}
-			
+
 			echo $_SESSION["responseModel"];
 			echo '<script type="text/javascript">disableTabById("server");disableTabById("enterprise");disableTabById("location");disableTabById("fPagos");disableTabById("cargos");activeTabById("admin");setTtle("Instalador - Administrador");</script>';
 		}
 	}
-	
+
   }
 ?>

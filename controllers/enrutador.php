@@ -1,5 +1,6 @@
 <?php
-	session_start();
+	//session_start();
+	$_SESSION["isLogged"]=false;
 	//session_destroy();
   class routerC extends Seguridad{
     public function getTemplate(){
@@ -14,7 +15,7 @@
       }
       include(RouterM::getPage($menu));
     }
-    
+
     public function getResource($name){
 		$resp = RouterM::getPage($name);
 		if(file_exists($resp)){
@@ -34,7 +35,7 @@
         			$r="index";
         		}else{
           	  	$r="login";
-       		}
+       			}
         	}
 		}
       $resp = routerM::getPage($r);

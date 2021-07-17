@@ -6,7 +6,7 @@
 			if(isset($_POST["login"])){
 				$userData = array("dui"=> $_POST["login"], "clave" => $this->encript($_POST["cl"]));
 				$table = "cuenta";
-				
+
 				$resp = UserM::login($userData,$table);
 				if($resp["dui"]==$userData["dui"]){
 					if($resp["clave"]==$userData["clave"]){
@@ -26,10 +26,10 @@
 					return "El usuario ".$userData["dui"]." no existe";
 				}
 			}
-			
+
 		}
 		public function logout(){
-			session_destroy();
+			$_SESSION['isLogged']=false;
 			echo "<script>window.location='./';</script>";
 		}
 	}
