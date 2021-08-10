@@ -71,7 +71,7 @@
                 </div>
         	</div>
         </form>
-        <!-- /.modal-content -->
+        <!-- /.modal-content a-->
     </div>
 
 </div>
