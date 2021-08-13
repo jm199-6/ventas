@@ -14,6 +14,28 @@ $(document).ready(function(){
 		id = $("#idTda").val();
 		getTda(host,id);
 	});
+	$("#ver1").click(function(){
+		if($("#p1").attr("type")=="password"){
+			$("#p1").attr("type","text");
+			$("#icVer1").removeClass("fa-eye");
+			$("#icVer1"). addClass("fa-eye-slash");
+		}else{
+			$("#p1").attr("type","password");
+			$("#icVer1").removeClass("fa-eye-slash");
+			$("#icVer1"). addClass("fa-eye");
+		}
+	});
+	$("#rVer1").click(function(){
+		if($("#rP1").attr("type")=="password"){
+			$("#rP1").attr("type","text");
+			$("#icRVer1").removeClass("fa-eye");
+			$("#icRVer1"). addClass("fa-eye-slash");
+		}else{
+			$("#rP1").attr("type","password");
+			$("#icRVer1").removeClass("fa-eye-slash");
+			$("#icRVer1"). addClass("fa-eye");
+		}
+	});
 	$(function () {
 	  $('[data-toggle="tooltip"]').tooltip();
 	});
@@ -169,5 +191,5 @@ function vPwd(id1, id2){
 	}
 	$("#"+id1).attr("type",valor);
 	$("#"+id2).attr("type",valor);
-	alert(obj);
+	
 }
