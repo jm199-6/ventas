@@ -31,8 +31,8 @@
         $router->route();
       ?>
     </div>
-    <!--footer class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
-      <!--span>&copy;</span-->
-    <!--/footer-->
+    <footer class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+      <span>&copy;</span>
+    </footer>
   </body>
 </html>

@@ -51,7 +51,7 @@
 						</font>
 					</button>
 					<font style="vertical-align: inherit;">
-		                <label style="vertical-align: inherit; float:'left'" id="textoN">
+		          <label style="vertical-align: inherit; float:'left'" id="textoN">
 							<?php
 								$UserC = new UserC();
 								$respLogin= $UserC->login();

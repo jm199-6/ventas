@@ -1,4 +1,4 @@
-<script type="text/javascript">
+ <script type="text/javascript">
   setTtle("Instalador - Servidor");
   host='<?php echo $_SERVER["SERVER_ADDR"].":".$_SERVER["SERVER_PORT"]; ?>';
 </script>

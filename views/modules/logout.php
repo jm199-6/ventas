@@ -1,4 +1,4 @@
 <?php
-	$user = new UserC();
-	$user->logout();
+	$UserC = new UserC();
+	$UserC->logout();
 ?>

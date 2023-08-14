@@ -1,6 +1,11 @@
 <?php
 
 	header("Content-Type: APPLICATION/JSON");
+	header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Methods: GET, POST, DELETE, UPDATE');
+	// Indica los encabezados permitidos.
+	header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Origin, XMLHttpRequest');
+
 	require_once "clases/cargo.php";
 	$client = array('tipo'=>$_SERVER["REQUEST_METHOD"],
 					'server_addr'=>$_SERVER["SERVER_ADDR"],

@@ -1,5 +1,5 @@
 <?php
-  //session_start();
+  session_start();
   date_default_timezone_set("America/El_Salvador");
   //Controladores
   require_once "controllers/encript.php";
@@ -19,10 +19,11 @@
   	require_once "models/userM.php";
   	require_once "models/empleadoM.php";
   }
+  
 
 
-
-
+  
   $plantilla = new routerC();
   $plantilla->getTemplate();
+  $UserC = new UserC();
 ?>

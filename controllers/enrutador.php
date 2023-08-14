@@ -1,8 +1,7 @@
 <?php
 	//session_start();
-	$_SESSION["isLogged"]=false;
-	//session_destroy();
-  class routerC extends Seguridad{
+	
+class routerC extends Seguridad{
     public function getTemplate(){
       include("./views/plantilla.php");
     }
@@ -29,13 +28,18 @@
 		}else{
         	if(isset($_GET['p'])){
 				$r=$_GET['p'];
-          	  $r=$this->desencript($r);
+          	  	$r=$this->desencript($r);
         	}else{
-        		if($_SESSION["isLogged"]==true){
-        			$r="index";
-        		}else{
-          	  	$r="login";
-       			}
+				if(!isset($_SESSION["isLogged"])){
+					$_SESSION["isLogged"]=false;
+					$r="login";
+				}else{
+					if($_SESSION["isLogged"]==true){
+						$r="index";
+					}else{
+						$r="login";
+					}
+				}
         	}
 		}
       $resp = routerM::getPage($r);
@@ -45,5 +49,5 @@
         echo "404 HTTP ERROR FILE NOT FOUND";
       }
     }
-  }
+}
 ?>
